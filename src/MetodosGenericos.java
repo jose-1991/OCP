@@ -1,3 +1,5 @@
+import generics.modelos.Cliente;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,17 +37,4 @@ public class MetodosGenericos {
         return Arrays.asList(c);
     }
 }
-class Cliente{
-    static int id;
-    String nombre;
-    String apellido;
-    Cliente(String nombre, String apellido){
-        this.nombre = nombre;
-        this.apellido = apellido;
-    }
-    Cliente(){}
 
-    public String toString(){
-        return ++id + ") " + nombre +" " + apellido;
-    }
-}
