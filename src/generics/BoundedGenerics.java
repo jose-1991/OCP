@@ -16,7 +16,7 @@ public class BoundedGenerics {
         List<Cliente> clientes = new ArrayList<>();
         clientes.add(new Cliente("Jhosep", "Martinez"));
         clientes.add(new Cliente("Javier", "Lopez"));
-        clientes.forEach(System.out::println);
+
 
         Cliente[] clientesArreglo = {new Cliente("Oscar", "Alvarado"),
                 new Cliente("Luci", "Gomez")};
@@ -36,6 +36,11 @@ public class BoundedGenerics {
 
         clientesPremium.forEach(System.out::println);
 
+        imprimirClientes(clientes);
+        imprimirClientes(clienteLista);
+        imprimirClientes(clientesPremium);
+
+
     }
     public static <T> List<T> fromArrayToList(T[] c){
 
@@ -50,10 +55,14 @@ public class BoundedGenerics {
         return Arrays.asList(c);
     }
 
+
     public static <T,G> List<T> fromArrayToList(T[] c, G[] x){
         for (G elements: x){
             System.out.println(elements);
         }
         return Arrays.asList(c);
+    }
+    public static void imprimirClientes(List<? extends Cliente> clientes){
+        clientes.forEach(System.out::println);
     }
 }

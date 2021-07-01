@@ -1,6 +1,7 @@
 package generics;
 
 import generics.modelos.Cliente;
+import generics.modelos.ClientePremium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,17 +28,14 @@ public class MetodosGenericos {
         nombres.forEach(System.out::println);
 
 
+
+
     }
 
     public static <T> List<T> fromArrayToList(T[] c){
         return Arrays.asList(c);
     }
-    public static <T extends Number> List<T> fromArrayToList(T[] c){
-        return Arrays.asList(c);
-    }
-    public static <T extends Cliente & Comparable <T>> List<T> fromArrayToList(T[] c){
-        return Arrays.asList(c);
-    }
+
     public static <T,G> List<T> fromArrayToList(T[] c, G[] x){
         for (G elements: x){
             System.out.println(elements);
