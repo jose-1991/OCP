@@ -40,6 +40,10 @@ public class BoundedGenerics {
         imprimirClientes(clienteLista);
         imprimirClientes(clientesPremium);
 
+        System.out.println("maximo de 1, 9, 4 es = " + maximo(1,9,4));
+        System.out.println("maximo de 2.3, 5.7, 3.5 es = " + maximo(2.3,5.7,3.5));
+        System.out.println("maximo de Naranja, Zanahoria, Pera es = " + maximo("Naranja","Zanahoria","Pera"));
+
 
     }
     public static <T> List<T> fromArrayToList(T[] c){
@@ -64,5 +68,16 @@ public class BoundedGenerics {
     }
     public static void imprimirClientes(List<? extends Cliente> clientes){
         clientes.forEach(System.out::println);
+    }
+
+    public static <T extends Comparable> T maximo(T a, T b, T c){
+        T max = a;
+        if (b.compareTo(max)> 0 ){
+            max = b;
+        }
+        if (c.compareTo(max)>0){
+            max = c;
+        }
+        return max;
     }
 }
