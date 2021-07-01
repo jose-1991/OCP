@@ -1,3 +1,5 @@
+package generics;
+
 import generics.modelos.Cliente;
 
 import java.util.ArrayList;
@@ -28,6 +30,12 @@ public class MetodosGenericos {
     }
 
     public static <T> List<T> fromArrayToList(T[] c){
+        return Arrays.asList(c);
+    }
+    public static <T extends Number> List<T> fromArrayToList(T[] c){
+        return Arrays.asList(c);
+    }
+    public static <T extends Cliente & Comparable <T>> List<T> fromArrayToList(T[] c){
         return Arrays.asList(c);
     }
     public static <T,G> List<T> fromArrayToList(T[] c, G[] x){
