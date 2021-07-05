@@ -1,10 +1,9 @@
-package estructuraDeDatos;
+package estructuraDeDatos.list;
 
-import estructuraDeDatos.modelo.Alumno;
+import estructuraDeDatos.modelos.Alumno;
 
 import java.util.ArrayList;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class MetodosArrayList {

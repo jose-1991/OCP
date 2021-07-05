@@ -1,6 +1,6 @@
-package estructuraDeDatos;
+package estructuraDeDatos.list;
 
-import estructuraDeDatos.modelo.Alumno;
+import estructuraDeDatos.modelos.Alumno;
 
 import java.util.*;
 

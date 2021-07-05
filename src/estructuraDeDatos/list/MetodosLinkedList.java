@@ -1,10 +1,8 @@
-package estructuraDeDatos;
+package estructuraDeDatos.list;
 
-import estructuraDeDatos.modelo.Alumno;
+import estructuraDeDatos.modelos.Alumno;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.ListIterator;
 
 public class MetodosLinkedList {

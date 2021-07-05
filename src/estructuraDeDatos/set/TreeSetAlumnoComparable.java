@@ -1,6 +1,6 @@
-package estructuraDeDatos;
+package estructuraDeDatos.set;
 
-import estructuraDeDatos.modelo.Alumno;
+import estructuraDeDatos.modelos.Alumno;
 
 import java.util.Comparator;
 import java.util.Set;

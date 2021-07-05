@@ -1,9 +1,9 @@
-package estructuraDeDatos;
+package estructuraDeDatos.set;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class BuscarDuplicados  {
+public class HashSetBuscarDuplicados {
     public static void main(String[] args) {
         String[] peces = {"Corvina", "Atun", "Sabalo", "Sardina", "Pejerrey", "Atun", "Sardina"};
         Set<String> unicos = new HashSet<>();

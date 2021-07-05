@@ -1,13 +1,13 @@
-package estructuraDeDatos;
+package estructuraDeDatos.set;
 
-import estructuraDeDatos.modelo.Alumno;
+import estructuraDeDatos.modelos.Alumno;
 
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
 
-public class HashSetEqualsHashCode {
+public class HashSetEqualsHashCodeIteracion {
     public static void main(String[] args) {
         Set<Alumno> sa = new HashSet<>();
         sa.add(new Alumno("Pato",5));

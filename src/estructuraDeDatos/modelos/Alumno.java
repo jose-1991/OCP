@@ -1,4 +1,4 @@
-package estructuraDeDatos.modelo;
+package estructuraDeDatos.modelos;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package estructuraDeDatos;
+package estructuraDeDatos.set;
 
 import java.util.Comparator;
 import java.util.Set;
