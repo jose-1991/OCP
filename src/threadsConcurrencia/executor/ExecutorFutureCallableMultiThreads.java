@@ -6,7 +6,10 @@ public class ExecutorFutureCallableMultiThreads {
     public static void main(String[] args) throws InterruptedException, TimeoutException, ExecutionException {
 
 
-        ExecutorService executor = Executors.newFixedThreadPool(2);
+        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
+
+        System.out.println("Longitud del poll: " + executor.getPoolSize());
+        System.out.println("Cantidad de tareas en cola: " + executor.getPoolSize());
 
         Callable<String> tarea = () -> {
             System.out.println("inicio de la tarea " );
@@ -27,18 +30,22 @@ public class ExecutorFutureCallableMultiThreads {
 
 
         Future <String> resultado = executor.submit(tarea);
-        Future <Integer> resultado2 = executor.submit(tarea2);
         Future <String> resultado3 = executor.submit(tarea);
+        Future <Integer> resultado2 = executor.submit(tarea2);
+
+
+        System.out.println("Longitud del poll: " + executor.getPoolSize());
+        System.out.println("Cantidad de tareas en cola: " + executor.getPoolSize());
         executor.shutdown();
 
         System.out.println("Continuamos con la ejecucion del metodo main");
 
         while (!(resultado.isDone() && resultado2.isDone() && resultado3.isDone())){
-            System.out.println(String.format("resultado1: %s - resultado2: %s - resultado3: %s",
+            System.out.printf("resultado1: %s - resultado2: %s - resultado3: %s%n",
                     resultado.isDone()? "finalizo" : "en proceso",
                     resultado.isDone()? "finalizo" : "en proceso",
-                    resultado.isDone()? "finalizo" : "en proceso" ));
-           // TimeUnit.MILLISECONDS.sleep(1000);
+                    resultado.isDone()? "finalizo" : "en proceso" );
+           TimeUnit.MILLISECONDS.sleep(1000);
         }
 
         System.out.println("Obtenemos el resultado de la tarea: " + resultado.get());
