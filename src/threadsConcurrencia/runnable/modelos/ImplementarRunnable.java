@@ -1,4 +1,4 @@
-package threadsConcurrencia.runnable;
+package threadsConcurrencia.runnable.modelos;
 
 public class ImplementarRunnable implements Runnable {
     private String name;
