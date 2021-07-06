@@ -1,0 +1,33 @@
+package threadsConcurrencia.executor;
+
+import java.sql.Time;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+public class EjecutarExecutor {
+    public static void main(String[] args) throws InterruptedException {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+
+        Runnable tarea = () -> {
+            System.out.println("inicio de la tarea " );
+
+
+            try {
+                System.out.println("Nombre del thread "+ Thread.currentThread().getName());
+                TimeUnit.SECONDS.sleep(5);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Finaliza Tarea.. ");
+        };
+
+        executor.submit(tarea);
+        executor.shutdown();
+        System.out.println("Continuando con la ejecucion del metodo main 1");
+        executor.awaitTermination(2,TimeUnit.SECONDS);
+        System.out.println("Continuando con la ejecucuon del metodo main 2");
+    }
+
+}
