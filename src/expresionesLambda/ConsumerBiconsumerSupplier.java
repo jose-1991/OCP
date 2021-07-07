@@ -10,7 +10,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class ConsumerBiconsumer {
+public class ConsumerBiconsumerSupplier {
     public static void main(String[] args) {
 
         Consumer<Date> consumidor = fecha -> {
@@ -32,10 +32,10 @@ public class ConsumerBiconsumer {
         List<String> nombres = Arrays.asList("Andres","Pepe","Luz", "Paco");
         nombres.forEach(consumidor2);
 
-        Supplier<Usuario> crearUsuario = Usuario::new;
+        Supplier<Usuario> crearUsuario =  Usuario::new; // () -> new Usuario();
         Usuario usuario = crearUsuario.get();
 
-        BiConsumer<Usuario, String> asignarNombre = Usuario::setNombre;
+        BiConsumer<Usuario, String> asignarNombre = Usuario::setNombre; // (a,b) -> a.setNombre(b);
 
         asignarNombre.accept(usuario,"Andres");
         System.out.println("Nombre de usuario: "+ usuario.getNombre());
