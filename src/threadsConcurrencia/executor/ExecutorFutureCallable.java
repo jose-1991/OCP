@@ -9,10 +9,14 @@ public class ExecutorFutureCallable {
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         Callable<String> tarea = () -> {
-            System.out.println("inicio de la tarea " );
+
             try {
+
+//                TimeUnit.SECONDS.sleep(1);
+                System.out.println("inicio de la tarea " );
                 System.out.println("Nombre del thread "+ Thread.currentThread().getName());
                 TimeUnit.SECONDS.sleep(3);
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -27,7 +31,8 @@ public class ExecutorFutureCallable {
 
         while (!resultado.isDone()){
             System.out.println("Ejecutando tarea...");
-            TimeUnit.MILLISECONDS.sleep(1500);
+            TimeUnit.MILLISECONDS.sleep(2000);
+
         }
 
         System.out.println("Obtenemos el resultado de la tarea: " + resultado.get());
