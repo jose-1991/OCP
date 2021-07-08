@@ -3,10 +3,21 @@ package apiStream.modelos;
 public class Usuario {
     private  String nombre;
     private  String apellido;
+    private Integer id;
+    private static int ultimoID;
 
     public Usuario(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.id = ++ultimoID;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -27,6 +38,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario: " + nombre + " " + apellido;
+        return "Usuario #"+id+": " + nombre + " " + apellido;
     }
 }
