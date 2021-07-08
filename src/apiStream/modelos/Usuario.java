@@ -1,15 +1,32 @@
 package apiStream.modelos;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 public class Usuario {
     private  String nombre;
     private  String apellido;
     private Integer id;
     private static int ultimoID;
 
+    private List<Factura> facturas;
+
+
     public Usuario(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.id = ++ultimoID;
+        this.facturas = new ArrayList<>();
+    }
+
+    public List<Factura> getFacturas() {
+        return facturas;
+    }
+
+    public void addFactura(Factura factura) {
+        this.facturas.add(factura);
+        factura.setUsuario(this);
     }
 
     public Integer getId() {
@@ -39,5 +56,18 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario #"+id+": " + nombre + " " + apellido;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Usuario usuario = (Usuario) o;
+        return Objects.equals(nombre, usuario.nombre) && Objects.equals(apellido, usuario.apellido);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, apellido);
     }
 }
