@@ -1,6 +1,8 @@
 package java8Optional.repositorio;
 
 import java8Optional.modelos.Computador;
+import java8Optional.modelos.Fabricante;
+import java8Optional.modelos.Procesador;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +15,10 @@ public class ComputadorRepositorio  implements Repositorio<Computador> {
 
     public ComputadorRepositorio(){
         dataSource = new ArrayList<>();
-        dataSource.add(new Computador("Asus ROG", "Strix G512"));
+        Procesador proc = new Procesador("I9-9880H", new Fabricante("Intel"));
+        Computador asus = new Computador("Asus ROG", "Strix G512");
+        asus.setProcesador(proc);
+        dataSource.add(asus);
         dataSource.add(new Computador("MackBook Pro", "MVVK2CI"));
     }
     @Override
