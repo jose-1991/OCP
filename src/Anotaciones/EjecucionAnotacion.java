@@ -6,6 +6,7 @@ import Anotaciones.procesador.JsonSerializador;
 
 
 import java.time.LocalDate;
+import java.util.function.ObjIntConsumer;
 
 
 public class EjecucionAnotacion {
@@ -14,6 +15,9 @@ public class EjecucionAnotacion {
         p.setFecha(LocalDate.now());
         p.setNombre("mesa centro roble");
         p.setPrecio(1000L);
+
+       // ObjIntConsumer<Integer> cons = (l,i) -> System.out.println(i+l);
+
 
 
 
