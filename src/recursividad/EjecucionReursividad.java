@@ -2,6 +2,8 @@ package recursividad;
 
 import recursividad.modelos.Componente;
 
+import java.util.stream.Stream;
+
 public class EjecucionReursividad {
     public static void main(String[] args) {
 
@@ -34,6 +36,35 @@ public class EjecucionReursividad {
                 .addComponente(new Componente("teclado"))
                 .addComponente(new Componente("mouse"));
 
+        metodoRecursivoJava8(pc,0).forEach(c -> {
+            String tab = "";
+            for (int i = 0; i < c.getNivel();i++ ){
+                tab += "\t";
+            }
+            System.out.println(tab + c.getNombre());
+        });
 
+
+    }
+
+
+    public static Stream<Componente> metodoRecursivoJava8(Componente c, int nivel){
+        c.setNivel(nivel);
+        return Stream.concat(Stream.of(c), c.getHijos().stream().flatMap(hijo -> metodoRecursivoJava8(hijo, nivel +1)));
+    }
+
+
+    public static void metodoRecursivo(Componente c, int nivel){
+        String tab = "";
+        for (int i = 0; i < c.getNivel();i++ ){
+            tab += "\t";
+        }
+
+        System.out.println(tab + c.getNombre());
+        if (c.tieneHijos()){
+            for (Componente hijo : c.getHijos()){
+                metodoRecursivo(hijo, nivel + 1);
+            }
+        }
     }
 }
