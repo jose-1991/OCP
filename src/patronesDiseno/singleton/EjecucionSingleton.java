@@ -1,4 +1,4 @@
-package patronesDiseno;
+package patronesDiseno.singleton;
 
 import patronesDiseno.singleton.ConexionBDSingleton;
 
