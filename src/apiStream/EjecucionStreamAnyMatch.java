@@ -9,10 +9,11 @@ public class EjecucionStreamAnyMatch {
 
 
         boolean existe = Stream
-                .of("Andres Gomez", "Jose Flores", "Javier Gomez", "Soledad Rojas", "Jose Cespedes")
+                .of("Andres Gomez", "Jose Flores", "Javier Gomez", "Soledad Rojas",
+                        "Jose Cespedes")
                 .map(nombre -> new Usuario(nombre.split(" ")[0], nombre.split(" ")[1]))
                 .peek(System.out::println)
-                .anyMatch(e -> e.getId().equals(4));
+                .anyMatch(e -> e.getId().equals(3));
 
 
         System.out.println(existe);
