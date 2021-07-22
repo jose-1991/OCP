@@ -1,7 +1,9 @@
 package manejoDeArchivos.whizlabTest;
 
+import java.io.Console;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,6 +15,26 @@ import java.util.stream.Stream;
 
 public class MetodosIOArchivos {
     public static void main(String[] args) throws IOException {
+
+        System.out.println("=============  InputStream  =============");
+        byte[] b = new byte[10];
+        InputStream in = System.in;
+        int i = in.read(b);
+
+        for (byte c :b){
+            System.out.print((char) c);
+        }
+
+        System.out.println("=============  Consola =============");
+//        Console con = System.console();  //suponer el acceso a la consola
+//        String uname = con.readLine("User Name: ");
+//        char [] p = con.readPassword("Password: ");
+//
+//        System.out.println("Username: " + uname.toString());
+//        System.out.println("Password: ");
+//        for (char c : p){
+//            System.out.println(c);
+//        }
 
         String nombreArchivo = "C:\\Users\\JoSe\\Desktop\\CursoJava\\Archivo\\nuevoJava.txt";
 
@@ -29,6 +51,7 @@ public class MetodosIOArchivos {
         Map mp = new HashMap<String, Object>();
 
         mp = Files.readAttributes(path,"*");
+
 
         System.out.println(mp);
 
