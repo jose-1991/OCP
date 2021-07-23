@@ -12,6 +12,15 @@ import java.util.stream.Stream;
 public class MetodosStream {
     public static void main(String[] args) {
 
+        System.out.println("============= Collectors =============");
+        Stream list3 = Stream.of("BB","CCC","AB","CCC","BB");
+        System.out.println(list3.collect(Collectors.toSet())); //collector.toSet =. elimina duplicados
+
+        System.out.println("============= anyMatch =============");
+        Stream list5 = Stream.of("ABC","aBB","abCC","ab","acC");
+        Map<Boolean,List<String>> map = (Map<Boolean, List<String>>) list5.collect(Collectors.partitioningBy((String s) -> s.startsWith("ab")));
+        System.out.println(map);
+
         System.out.println("============= max =============");
         Stream<String> st3 = Stream.of("abc","ab");
         System.out.println(st3.max((s1,s2)-> Integer.compare(s2.length(),s1.length())));
@@ -22,9 +31,9 @@ public class MetodosStream {
         System.out.println(st.peek(System.out::print).anyMatch(x-> x>+10));
 
         System.out.println("============= put => set =============");
-        Map<Integer,Double> map = new HashMap<>();
-        map.put(1,1.1);
-        map.put(1,3.3);
+        Map<Integer,Double> map2 = new HashMap<>();
+        map2.put(1,1.1);
+        map2.put(1,3.3);
         System.out.println(map);
 
         System.out.println("============= anyMatch =============");
@@ -76,6 +85,10 @@ public class MetodosStream {
 
         stream = Stream.of("A","B","C","D");
         System.out.println(stream.peek(System.out::print).findAny().orElse("NA"));
+
+        System.out.println("============= skip - count =============");
+        Stream ints1 = Stream.of("A","B","C","D");
+        ints1.peek(System.out::print).skip(2).count();
 
     }
 }
