@@ -2,14 +2,11 @@ package expresionesLambda.whizlabTest;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BinaryOperator;
-import java.util.function.IntConsumer;
-import java.util.function.Predicate;
-import java.util.function.ToIntFunction;
+import java.util.function.*;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class metodos {
+public class MetodosLambda {
     public static void main(String[] args) {
         System.out.println("===========  Stream => ToIntFuntion  ===========");
 
@@ -41,6 +38,16 @@ public class metodos {
 
 
         System.out.println(bp.apply(1,2));
+
+        System.out.println("============= andThen =============");
+
+        Function<String,Double> f = Double::parseDouble;
+        System.out.println(f.andThen(s-> s*2).apply("1"));
+
+        System.out.println("============= DoubleSupplier =============");
+        DoubleSupplier sups = () -> Math.random()*10;
+        System.out.println(sups.getAsDouble());
+
 
     }
 }
