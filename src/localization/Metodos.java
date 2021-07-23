@@ -4,8 +4,12 @@ import java.util.ListResourceBundle;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class metodos {
+public class Metodos {
+    static int i = 10;
+
+
     public static void main(String[] args) {
+
 
         Locale loc = new Locale("de");
         Locale loc2 = new Locale.Builder().setLanguage("zh").build();

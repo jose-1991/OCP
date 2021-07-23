@@ -3,9 +3,7 @@ package apiStream.whizlabTest;
 import com.sun.xml.internal.stream.StaxErrorReporter;
 
 import java.net.Inet4Address;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
@@ -14,10 +12,20 @@ import java.util.stream.Stream;
 public class MetodosStream {
     public static void main(String[] args) {
 
+        Map<Integer,Double> map = new HashMap<>();
+        map.put(1,1.1);
+        map.put(1,3.3);
+        System.out.println(map);
+
+        System.out.println("============= anyMatch =============");
+        Stream <String> nom = Stream.of("10","20","30");
+       nom.forEach(s-> System.out.println(s.length()));
+
         System.out.println("============= Min optional =============");
         Stream<Integer> st = Stream.of(12,40,11,22);
         Optional<Integer> min = st.filter(p->p%2==0).min(Integer::compareTo);
         System.out.println(min);
+
 
 
 
