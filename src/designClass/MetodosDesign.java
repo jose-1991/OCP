@@ -2,7 +2,7 @@ package designClass;
 
 import java.util.Arrays;
 
-public class metodos {
+public class MetodosDesign {
     static int y = 0;
     public static void main(String[] args) {
 
@@ -35,7 +35,11 @@ enum Value{
 
     private final int level;
 
-    private Value(int levelCode){
+     private Value(int levelCode){
         level = levelCode;
     }
+}
+interface I{
+    String toString();
+    boolean equals(Object o);
 }

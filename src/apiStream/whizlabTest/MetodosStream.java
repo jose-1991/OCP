@@ -12,6 +12,16 @@ import java.util.stream.Stream;
 public class MetodosStream {
     public static void main(String[] args) {
 
+        System.out.println("============= max =============");
+        Stream<String> st3 = Stream.of("abc","ab");
+        System.out.println(st3.max((s1,s2)-> Integer.compare(s2.length(),s1.length())));
+
+
+        System.out.println("============= AnyMatch =============");
+        Stream <Integer> st = Stream.of(4,10,8,3);
+        System.out.println(st.peek(System.out::print).anyMatch(x-> x>+10));
+
+        System.out.println("============= put => set =============");
         Map<Integer,Double> map = new HashMap<>();
         map.put(1,1.1);
         map.put(1,3.3);
@@ -22,8 +32,8 @@ public class MetodosStream {
        nom.forEach(s-> System.out.println(s.length()));
 
         System.out.println("============= Min optional =============");
-        Stream<Integer> st = Stream.of(12,40,11,22);
-        Optional<Integer> min = st.filter(p->p%2==0).min(Integer::compareTo);
+        Stream<Integer> st1 = Stream.of(12,40,11,22);
+        Optional<Integer> min = st1.filter(p->p%2==0).min(Integer::compareTo);
         System.out.println(min);
 
 
