@@ -31,5 +31,16 @@ public class MetodosTreeMap {
         tmap.replaceAll((k,v) -> (int)k.charAt(v));
         System.out.println(tmap.values());
 
+        System.out.println("============  Replace  ============");
+        Map<Integer,String> map2 = new TreeMap<>();
+
+        map2.put(1,"One");
+        map2.put(2,"Two");
+        map2.put(3,"Three");
+
+        map2.replace(1,"1",null);
+        map2.replace(3,null);
+        System.out.println(map2.values());
+
     }
 }

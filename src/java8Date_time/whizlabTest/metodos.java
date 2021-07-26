@@ -47,5 +47,11 @@ public class metodos {
         now = now.truncatedTo(ChronoUnit.MINUTES);
         System.out.println(now);
 
+        System.out.println("============  ZonedDateTime  ============");
+        LocalDateTime ldt3 = LocalDateTime.now();
+        ZonedDateTime zid = ZonedDateTime.of(ldt3,ZoneId.of("Canada/Atlantic"));
+
+        System.out.println(zid.getHour());
+
     }
 }
