@@ -48,6 +48,24 @@ public class MetodosLambda {
         DoubleSupplier sups = () -> Math.random()*10;
         System.out.println(sups.getAsDouble());
 
+        System.out.println("=============  Compose =============");
+        Function<String,Double> fun = Double::parseDouble;
+        Double d = fun.compose((String s) -> s+".01").andThen(s->s*2).apply("1");
+        System.out.println(d);
+
+        System.out.println("=============  Compose =============");
+        Function<Integer, String> funny = s->s.toString();
+        Function<String, String> fun2 = funny.andThen((String s) -> s+"2").compose((String s) -> Integer.parseInt(s));
+
+        System.out.println(fun2.apply("10"));
+
+        System.out.println("=============  Negate =============");
+        String in = "whizlab";
+        Predicate<String> pe = s->s.indexOf("i")>0;
+        System.out.println(pe.and(s->s.length()>4).negate().test(in));
+        System.out.println(pe.negate().or(s->s.length()>4).test(in));
+
+
 
     }
 }
