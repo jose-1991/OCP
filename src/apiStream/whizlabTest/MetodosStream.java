@@ -4,6 +4,7 @@ import com.sun.xml.internal.stream.StaxErrorReporter;
 
 import java.net.Inet4Address;
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
@@ -81,6 +82,7 @@ public class MetodosStream {
         System.out.println(out);
 
 
+
         System.out.println("=============  peek - findAny =============");
 
         stream = Stream.of("A","B","C","D");
@@ -90,5 +92,18 @@ public class MetodosStream {
         Stream ints1 = Stream.of("A","B","C","D");
         ints1.peek(System.out::print).skip(2).count();
 
+        System.out.println("=============  operacion intermedia =============");
+
+        List<Integer> number = new ArrayList<>();
+        number.add(10);
+        number.add(11);
+        number.add(13);
+        number.add(19);
+        number.add(5);
+
+        Predicate<Integer> pred = p->p>10;
+
+        number.stream().filter(pred).forEach(System.out::println);
+        System.out.println(number);
     }
 }
