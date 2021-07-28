@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.DoublePredicate;
+import java.util.function.Function;
+import java.util.function.IntBinaryOperator;
 import java.util.function.ToDoubleBiFunction;
 import java.util.stream.DoubleStream;
 
@@ -34,5 +36,19 @@ public class PrefixArrays {
         DoublePredicate dps = dp.negate().and(d->d>12.5);
         ds.filter(dps).forEach(d -> System.out.println((int)d));
 
+
+        System.out.println("==========  IntBinaryOperator  ==========");
+        IntBinaryOperator ibo = Integer::compare;
+        int x = ibo.applyAsInt(8,9);
+        System.out.println(x);
+
+        System.out.println("==========  compose  ==========");
+
+        Function<Double,Integer> mul = d->d.intValue();
+        Function<Integer,String> f = in ->in.toString();
+
+        Function<Double,String> func = f.compose(mul);
+
+        System.out.println(func.apply(12.6).length());
     }
 }
