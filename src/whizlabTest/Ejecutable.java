@@ -1,5 +1,7 @@
 package whizlabTest;
 
+import java.util.Comparator;
+
 public class Ejecutable {
     private static class CStore implements Runnable {
          int cps = 10;
@@ -14,8 +16,9 @@ public class Ejecutable {
                 }
                 synchronized (this){
                     cps-=1;
+                    System.out.println(cps);
                 }
-                System.out.println(cps);
+
             }
         }
     }
@@ -27,5 +30,7 @@ public class Ejecutable {
         Thread th2 = new Thread(cs);
         th1.start();
         th2.start();
+
+
     }
 }
