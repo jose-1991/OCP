@@ -1,5 +1,8 @@
 package examtopicTest;
-
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,5 +31,23 @@ public class Question87 {
 
         produtcs.stream().filter(Product.ProductFilter::isAvailable)
                 .forEach(p -> System.out.println(p));
+
+
+        System.out.println("============= #91 ============");
+        try {
+            List<String> content = Files.readAllLines(Paths.get("data.txt"));
+            content.stream().forEach(line -> {
+                try{
+                    Files.write(
+                            Paths.get("dest.txt"),
+                            line.getBytes(),
+                            StandardOpenOption.APPEND
+                    );
+                }catch (IOException e){
+                    System.out.println("Exception 1");
+            }});
+        }catch (IOException e){
+            System.out.println("Exception 2");
+        }
     }
 }
