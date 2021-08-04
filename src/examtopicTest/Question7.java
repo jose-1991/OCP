@@ -13,7 +13,7 @@ class Penguin extends Bird{
     }
 }
 
-public class Questions7 {
+public class Question7 {
     public static void main(String[] args) {
         fly(() -> new Bird());
         fly(Penguin::new);

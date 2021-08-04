@@ -21,7 +21,7 @@ class Book implements Comparator<Book> {
     }
 }
 
-public class Qustion37 {
+public class Question37 {
     public static void main(String[] args) {
         List<Book> books = Arrays.asList (
                 new Book ("Beginning with Java", 2),

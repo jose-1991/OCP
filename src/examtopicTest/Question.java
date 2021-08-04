@@ -24,7 +24,7 @@ class Vehicle{
     }
 }
 
-public class Questions {
+public class Question {
     public static void main(String[] args) {
         System.out.println("=========== Question #1 ==========");
         Vehicle v = new Vehicle(100);
