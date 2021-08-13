@@ -67,7 +67,7 @@ public class Flujos {
         map.put(2, "TWO");
         map.put(3, "THREE");
 
-        System.out.println(map.stream().count());
+        System.out.println(map);
     }
 
 }
