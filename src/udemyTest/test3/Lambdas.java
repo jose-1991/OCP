@@ -10,6 +10,7 @@ import java.util.function.BiPredicate;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
+
 public class Lambdas {
     public static void main(String[] args) {
         BiPredicate<String, String> predicate = (a,b)-> a.contains(b) ;
@@ -18,6 +19,7 @@ public class Lambdas {
         };
 
         System.out.println(func.apply("Tomato", "at"));
+        System.out.printf("%2$d + %1$d", 10, 20);
 
 
         Supplier<StringBuilder> supplier = () -> new StringBuilder(" olleH")
